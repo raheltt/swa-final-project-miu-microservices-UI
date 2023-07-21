@@ -1,27 +1,30 @@
 import React from 'react';
-import LoginPage from './components/LoginPage';
+import LoginPage from './pages/Auth/LoginPage';
 import AdminDashboard from './components/AdminDashboard';
 import TeacherDashboard from './components/TeacherDashboard';
 import StudentDashboard from './components/StudentDashboard';
 
+import HomePage from "./pages/HomePage";
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+const router = createBrowserRouter([
+  {path: "/", element: <HomePage />},
+  {path:"/admin", element: <AdminDashboard />},
+  {path: "/login", element: <LoginPage />},
+  {path:"/teacher", element:<TeacherDashboard />},
+  {path:"/student", element: <StudentDashboard />}
+])
 
 const App = () => {
   return (
-    <div>
-    <div className="app">
-      <LoginPage />
-    </div>,
-    <div className="app">
-    <AdminDashboard />
-  </div>,
-   <div className="app">
-   <TeacherDashboard />
- </div>,
-     <div className="app">
-     <StudentDashboard />
-   </div>
-   </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 };
 
