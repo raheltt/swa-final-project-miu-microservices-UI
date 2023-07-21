@@ -2,7 +2,7 @@ import React from 'react';
 import LoginPage from './pages/Auth/LoginPage';
 import AdminDashboard from './components/AdminDashboard';
 import TeacherDashboard from './components/TeacherDashboard';
-import StudentDashboard from './components/StudentDashboard';
+import StudentDashboard from './pages/Student';
 
 import HomePage from "./pages/HomePage";
 
