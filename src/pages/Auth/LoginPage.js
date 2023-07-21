@@ -1,6 +1,7 @@
 // LoginPage.js
 
 import React, { useRef, useState } from 'react';
+import { useNavigate, redirect, Navigate } from "react-router-dom";
 
 
 // MATERIAL
@@ -17,7 +18,9 @@ const LoginPage = () => {
     role: ''
   });
 
-  const handleLogin = (e) => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
     // TODO: Implement the login logic here
     // You can use the entered username, password, and role to make API calls for authentication
     // For simplicity, let's just print the login details for now
@@ -26,6 +29,12 @@ const LoginPage = () => {
     const password = userDetail.current.password.value;
     const role = userDetail.current.role;
     console.log(username, password, role)
+
+    // user-logged in
+    const redirectPath = `/${role}`
+    console.log("redirect path => " + redirectPath)
+    // return <Navigate to={redirectPath} replace />
+    navigate(redirectPath);
     
   };
 
