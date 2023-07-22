@@ -1,14 +1,13 @@
 // LoginPage.js
 
-import React, { useRef, useState } from 'react';
-import { useNavigate, redirect, Navigate } from "react-router-dom";
+import React, { useRef } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 // MATERIAL
 import { Container, Typography, TextField, Button, FormControl, InputLabel } from '@mui/material';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import OutlinedInput from '@mui/material/OutlinedInput';
 
 
 const LoginPage = () => {
@@ -31,7 +30,7 @@ const LoginPage = () => {
     console.log(username, password, role)
 
     // user-logged in
-    const redirectPath = `/${role}`
+    const redirectPath = `/${role}s`
     console.log("redirect path => " + redirectPath)
     // return <Navigate to={redirectPath} replace />
     navigate(redirectPath);

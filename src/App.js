@@ -19,11 +19,12 @@ import AddReward from './pages/AddReward/AddReward';
 import UpdateReward from './pages/UpdateReward/UpdateReward';
 import RemoveReward from './pages/RemoveReward/RemoveReward';
 import ViewRewardById from './pages/ViewRewardById/ViewRewardById';
+import PageNotFound from './pages/PageNotFound';
 
 
 const router = createBrowserRouter([
   {path: "/", element: <HomePage />},
-  {path:"/admin", element: <AdminDashboard />},
+  {path:"/admins", element: <AdminDashboard />},
   {path: "/login", element: <LoginPage />},
   {path:"/teachers", element:<TeacherDashboard />},
   {path:"/students", element: <Student/>},
@@ -35,12 +36,8 @@ const router = createBrowserRouter([
   {path:"/rewards/add", element:<AddReward/>},
   {path:"/rewards/remove", element:<RemoveReward/>},
   {path:"/rewards/update", element:<UpdateReward/>},
-  {path:"/rewards/get/{id}", element:<ViewRewardById/>}
-
-
-
-
-
+  {path:"/rewards/get/{id}", element:<ViewRewardById/>},
+  {path:"*", element:<PageNotFound />}
 ])
 
 const App = () => {

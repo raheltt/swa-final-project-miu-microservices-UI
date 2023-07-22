@@ -1,12 +1,14 @@
 // AdminDashboard.js
 
 import React from 'react';
+import NavBar from './NavBar';
 
 const AdminDashboard = () => {
   // You can add state and functions here for handling data and interactions
 
   return (
     <div className="admin-dashboard">
+      <NavBar />
       <h2>Admin Dashboard</h2>
       {/* Add navigation links to different admin features */}
       <nav>
