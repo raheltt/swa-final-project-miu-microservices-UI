@@ -18,7 +18,7 @@ import ViewRewards from './pages/ViewRewards/ViewRewards';
 import AddReward from './pages/AddReward/AddReward';
 import UpdateReward from './pages/UpdateReward/UpdateReward';
 import RemoveReward from './pages/RemoveReward/RemoveReward';
-import RedeaamReward from './pages/RedeemReward/RedeaamReward';
+import ViewRewardById from './pages/ViewRewardById/ViewRewardById';
 
 
 const router = createBrowserRouter([
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   {path:"/rewards/add", element:<AddReward/>},
   {path:"/rewards/remove", element:<RemoveReward/>},
   {path:"/rewards/update", element:<UpdateReward/>},
-  {path:"/redeems/reward", element:<RedeaamReward/>}
+  {path:"/rewards/get/{id}", element:<ViewRewardById/>}
 
 
 
