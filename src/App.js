@@ -14,7 +14,10 @@ import {
 import RemoveStudent from './pages/RemoveStudent/RemoveStudent';
 import AddSchool from './pages/AddSchool/AddSchool';
 import RemoveSchool from './pages/RemoveSchool/RemoveSchool';
+import ViewRewards from './pages/ViewRewards/ViewRewards';
 import AddReward from './pages/AddReward/AddReward';
+import UpdateReward from './pages/UpdateReward/UpdateReward';
+import RemoveReward from './pages/RemoveReward/RemoveReward';
 import RedeaamReward from './pages/RedeemReward/RedeaamReward';
 
 
@@ -22,14 +25,17 @@ const router = createBrowserRouter([
   {path: "/", element: <HomePage />},
   {path:"/admin", element: <AdminDashboard />},
   {path: "/login", element: <LoginPage />},
-  {path:"/teacher", element:<TeacherDashboard />},
-  {path:"/student", element: <Student/>},
-  {path:"/student/add", element: <AddStudent/>},
-  {path:"/student/remove", element:<RemoveStudent/>},
-  {path:"/school/add", element:<AddSchool/>},
-  {path:"/school/remove", element:<RemoveSchool/>},
-  {path:"/rward/add", element:<AddReward/>},
-  {path:"/redeem/reward", element:<RedeaamReward/>}
+  {path:"/teachers", element:<TeacherDashboard />},
+  {path:"/students", element: <Student/>},
+  {path:"/students/add", element: <AddStudent/>},
+  {path:"/students/remove", element:<RemoveStudent/>},
+  {path:"/schools/add", element:<AddSchool/>},
+  {path:"/schools/remove", element:<RemoveSchool/>},
+  {path:"/rewards/view", element:<ViewRewards/>},
+  {path:"/rewards/add", element:<AddReward/>},
+  {path:"/rewards/remove", element:<RemoveReward/>},
+  {path:"/rewards/update", element:<UpdateReward/>},
+  {path:"/redeems/reward", element:<RedeaamReward/>}
 
 
 
