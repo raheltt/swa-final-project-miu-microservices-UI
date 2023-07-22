@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginPage from './pages/Auth/LoginPage';
-import AdminDashboard from './components/AdminDashboard';
+
 import TeacherDashboard from './components/TeacherDashboard';
 import Student from './pages/Student';
 import AddStudent from './pages/AddStudent/AddStudent';
@@ -20,11 +20,18 @@ import UpdateReward from './pages/UpdateReward/UpdateReward';
 import RemoveReward from './pages/RemoveReward/RemoveReward';
 import ViewRewardById from './pages/ViewRewardById/ViewRewardById';
 import PageNotFound from './pages/PageNotFound';
+import AdminDashboard from './pages/Admin/AdminDashboard';
+
+import TeacherManagement from './pages/Admin/TeacherManagement';
+import AdminHome from './pages/Admin/AdminHome';
 
 
 const router = createBrowserRouter([
   {path: "/", element: <HomePage />},
-  {path:"/admins", element: <AdminDashboard />},
+  {path:"/admins", element: <AdminDashboard />, children: [
+    {path:"", element:<AdminHome />},
+    {path:"teachers", element: <TeacherManagement />}
+  ]},
   {path: "/login", element: <LoginPage />},
   {path:"/teachers", element:<TeacherDashboard />},
   {path:"/students", element: <Student/>},

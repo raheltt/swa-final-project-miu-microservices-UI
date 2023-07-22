@@ -34,10 +34,14 @@ export default function NavBar() {
           <Button color="inherit">
             <Link to="/admins/teachers">teachers</Link>
             </Button>
-          <Button color="inherit">
+          {/* <Button color="inherit">
             <Link to="/admins/students">students</Link>
-          </Button>
-          <Button color="inherit">logout</Button>
+          </Button> */}
+          <Button color="inherit">
+            <Link to="/login">
+            logout
+            </Link>
+            </Button>
         </Toolbar>
       </AppBar>
     </Box>
