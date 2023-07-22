@@ -14,6 +14,8 @@ import {
 import RemoveStudent from './pages/RemoveStudent/RemoveStudent';
 import AddSchool from './pages/AddSchool/AddSchool';
 import RemoveSchool from './pages/RemoveSchool/RemoveSchool';
+import AddReward from './pages/AddReward/AddReward';
+import RedeaamReward from './pages/RedeemReward/RedeaamReward';
 
 
 const router = createBrowserRouter([
@@ -25,7 +27,10 @@ const router = createBrowserRouter([
   {path:"/student/add", element: <AddStudent/>},
   {path:"/student/remove", element:<RemoveStudent/>},
   {path:"/school/add", element:<AddSchool/>},
-  {path:"/school/remove", element:<RemoveSchool/>}
+  {path:"/school/remove", element:<RemoveSchool/>},
+  {path:"/rward/add", element:<AddReward/>},
+  {path:"/redeem/reward", element:<RedeaamReward/>}
+
 
 
 

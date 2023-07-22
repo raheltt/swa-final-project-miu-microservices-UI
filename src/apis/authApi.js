@@ -3,7 +3,7 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const login = ({ email, password }) => {
   const payload = { email, password };
-  return axios.post(`${BASE_URL}/api/v1/auth/login`, payload);
+  return axios.post(`${BASE_URL}/api//auth/login`, payload);
 };
 
 export const signUp = (data) => {
