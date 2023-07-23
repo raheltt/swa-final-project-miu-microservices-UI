@@ -42,5 +42,20 @@
       },
       "id": 7
     }
+  ],
+  "student": [
+    {
+      "firstName": "rahel",
+      "lastName": "rahel",
+      "schoolId": 0,
+      "studentNumber": "23",
+      "studentClass": {
+        "year": "3",
+        "group": "34"
+      },
+      "score": "34",
+      "avatarId": "34",
+      "id": 1
+    }
   ]
 }

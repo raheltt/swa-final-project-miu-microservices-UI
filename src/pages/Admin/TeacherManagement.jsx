@@ -50,8 +50,9 @@ const formStyle = {
 
 
 const TeacherManagement = () => {
-    const [open, setOpen] = useState(false);
-    const[teacherAdded, setTeacherAdded] = useState(0);
+  const [open, setOpen] = useState(false);
+  const[teacherAdded, setTeacherAdded] = useState(0);
+  const [teachers, setTeachers] = useState([]);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -61,7 +62,14 @@ const TeacherManagement = () => {
     year: 0,
     group: ""
   });
-  useEffect(() => {}, [teacherAdded])
+
+  useEffect(() => {
+    axios.get(BASE_URL).then(res => {
+      console.log(res)
+      setTeachers(res.data);
+
+    })
+  }, [])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -90,8 +98,9 @@ const TeacherManagement = () => {
 
     console.log(data);
     axios.post(BASE_URL, data).then(res => {
-      console.log("suceess full update")
-      setTeacherAdded(teacherAdded + 1)
+      // console.log("suceess full update")
+      // setTeacherAdded(teacherAdded + 1)
+      setTeachers([...teachers, data])
     }).catch(error => {
       console.log("error adding teacher")
     })
@@ -99,17 +108,22 @@ const TeacherManagement = () => {
     // delete
 
   };
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:3004/teachers/${id}`).then(res => {
-      console.log("deleted")
-    }).catch(error => console.log(error))
+
+  const handleDelete = (teacherId) => {
+    axios.delete(`${BASE_URL}/${teacherId}`).then(res => {
+      console.log("Teacher deleted")
+      setTeachers(teachers.filter(teacher => teacher.teacherId !== teacherId))
+    }).catch(error => {
+      console.log("teacher not deleted")
+      console.log(error)
+    })
   }
 
     return (
         <>
             <h1>Management Teachers</h1>
             <AlertDialog open={open} setOpen={setOpen} formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
-            <ListTeachers />
+            <ListTeachers teachers={teachers} setTeachers={setTeachers} handleDelete={handleDelete} />
         </>
     )
 }
@@ -239,27 +253,13 @@ const AddTeacherForm = ({formData, handleChange, handleSubmit}) => {
     </>)
 }
 
-const ListTeachers = () => {
+const ListTeachers = ({teachers, setTeachers, handleDelete}) => {
   const[update, setUpdate] = useState(false)
-  const [teachers, setTeachers] = useState([]);
+  // const [teachers, setTeachers] = useState([]);
   
-  const handleDelete = (teacherId) => {
-    axios.delete(`${BASE_URL}/${teacherId}`).then(res => {
-      console.log("Teacher deleted")
-      setUpdate(!update)
-    }).catch(error => {
-      console.log("teacher not deleted")
-      console.log(error)
-    })
-  }
+  
 
-  useEffect(() => {
-    axios.get(BASE_URL).then(res => {
-      console.log(res)
-      setTeachers(res.data);
-
-    })
-  }, [update])
+  
 
     return (
       teachers &&
