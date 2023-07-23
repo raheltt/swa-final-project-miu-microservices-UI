@@ -1,0 +1,46 @@
+{
+  "teachers": [
+    {
+      "firstName": "asdf",
+      "lastName": "asdf",
+      "schoolId": "23",
+      "contact": {
+        "email": "rahelteklu0@gmail.com",
+        "phoneNumber": "asdf"
+      },
+      "teachingClass": {
+        "year": 0,
+        "group": "232"
+      },
+      "id": 5
+    },
+    {
+      "firstName": "Java",
+      "lastName": "Java",
+      "schoolId": "232",
+      "contact": {
+        "email": "java@gmail.com",
+        "phoneNumber": "223"
+      },
+      "teachingClass": {
+        "year": "23",
+        "group": "23"
+      },
+      "id": 6
+    },
+    {
+      "firstName": "asdf",
+      "lastName": "asdf",
+      "schoolId": "23",
+      "contact": {
+        "email": "rahelteklu0@gmail.com",
+        "phoneNumber": "asd"
+      },
+      "teachingClass": {
+        "year": "023",
+        "group": "23"
+      },
+      "id": 7
+    }
+  ]
+}

@@ -6,11 +6,11 @@ import {Outlet} from "react-router-dom";
 
 const AdminDashboard = () => {
   // You can add state and functions here for handling data and interactions
-
+  const user = {role: "admin"}
   return (
     
     <div className="admin-dashboard">
-      <NavBar />
+      <NavBar user={user} />
       <Outlet />
     </div>
   );

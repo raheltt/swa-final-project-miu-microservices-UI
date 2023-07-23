@@ -10,7 +10,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
-export default function NavBar() {
+export default function NavBar({user}) {
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -26,17 +27,29 @@ export default function NavBar() {
           </IconButton>
           
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          <Link to="/admins">
-            Admin
+          <Link to={`/${user.role}s`}>
+            {user.role.toUpperCase()}
             </Link>
           </Typography>
           
-          <Button color="inherit">
-            <Link to="/admins/teachers">teachers</Link>
-            </Button>
-          {/* <Button color="inherit">
-            <Link to="/admins/students">students</Link>
-          </Button> */}
+          {
+            (user.role === "admin") && 
+            (
+              <Button color="inherit">
+                <Link to="/admins/teachers">teachers</Link>
+              </Button>
+            )
+          }
+
+{
+            (user.role === "teacher") && 
+            (
+              <Button color="inherit">
+                <Link to="/teachers/students">students</Link>
+              </Button>
+            )
+          }
+          
           <Button color="inherit">
             <Link to="/login">
             logout

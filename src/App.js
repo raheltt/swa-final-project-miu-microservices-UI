@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginPage from './pages/Auth/LoginPage';
 
-import TeacherDashboard from './components/TeacherDashboard';
+import TeacherDashboard from './pages/Teachers/TeacherDashboard';
 import Student from './pages/Student';
 import AddStudent from './pages/AddStudent/AddStudent';
 
@@ -24,6 +24,8 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 
 import TeacherManagement from './pages/Admin/TeacherManagement';
 import AdminHome from './pages/Admin/AdminHome';
+import StudentManagement from './pages/Teachers/StudentManagement';
+import TeacherHome from './pages/Teachers/TeacherHome';
 
 
 const router = createBrowserRouter([
@@ -33,7 +35,12 @@ const router = createBrowserRouter([
     {path:"teachers", element: <TeacherManagement />}
   ]},
   {path: "/login", element: <LoginPage />},
-  {path:"/teachers", element:<TeacherDashboard />},
+  {path:"/teachers", element:<TeacherDashboard />,
+    children: [
+      {path:"", element: <TeacherHome />},
+      {path:"students", element: <StudentManagement />}
+    ]
+  },
   {path:"/students", element: <Student/>},
   {path:"/students/add", element: <AddStudent/>},
   {path:"/students/remove", element:<RemoveStudent/>},
